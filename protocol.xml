@@ -332,8 +332,10 @@ Any inquiries can be addressed to:
 		<QAction id="1" name="Precompiled Code" encoding="csharp" options="precompile" />
 		<QAction id="2" name="After Startup" encoding="csharp" triggers="2" />
 		
-		<QAction id="3" name="Latest Listings Response" encoding="csharp" triggers="1000">
-		</QAction>
+		<QAction id="3" name="Latest Listings Response" encoding="csharp" triggers="1000"/>
+		<QAction id="4" name="Categories Response" encoding="csharp" triggers="1001"/>
+		<QAction id="5" name="Category Response" encoding="csharp" triggers="1002"/>
+		<QAction id="6" name="Latest Quotes Response" encoding="csharp" triggers="1003"/>
 	</QActions>
 
 	<Groups>
@@ -391,6 +393,43 @@ Any inquiries can be addressed to:
 				<Id>1</Id>
 			</Content>
 		</Trigger>
+
+		<Trigger id="2">
+			<Name>After Latest Listings Group Clean Up</Name>
+			<On id="1000">group</On>
+			<Type>action</Type>
+			<Time>after</Time>	
+			<Content>
+				<Id>3</Id>
+			</Content>
+		</Trigger>
+		<Trigger id="3">
+			<Name>After Categories Group Clean Up</Name>
+			<On id="1001">group</On>
+			<Type>action</Type>
+			<Time>after</Time>	
+			<Content>
+				<Id>4</Id>
+			</Content>
+		</Trigger>
+		<Trigger id="4">
+			<Name>After Category Group Clean Up</Name>
+			<On id="1002">group</On>
+			<Type>action</Type>
+			<Time>after</Time>	
+			<Content>
+				<Id>5</Id>
+			</Content>
+		</Trigger>
+		<Trigger id="5">
+			<Name>After Latest Quotes Group Clean Up</Name>
+			<On id="1003">group</On>
+			<Type>action</Type>
+			<Time>after</Time>	
+			<Content>
+				<Id>6</Id>
+			</Content>
+		</Trigger>
 	</Triggers>
 
 	<Actions>
@@ -405,7 +444,29 @@ Any inquiries can be addressed to:
 			<Type>run actions</Type>
 		</Action>
 		
-		<!--HTTP actions-->
+		<!--Clean up actions-->
+		<Action id="3">
+			<Name>Latest Listings Clean Up</Name>
+			<On id="1000">parameter</On>
+			<Type>clear</Type>
+		</Action>
+		<Action id="4">
+			<Name>Categories Clean Up</Name>
+			<On id="1001">parameter</On>
+			<Type>clear</Type>
+		</Action>
+		<Action id="5">
+			<Name>Category Clean Up</Name>
+			<On id="1002">parameter</On>
+			<Type>clear</Type>
+		</Action>
+		<Action id="6">
+			<Name>Latest Quotes Clean Up</Name>
+			<On id="1003">parameter</On>
+			<Type>clear</Type>
+		</Action>
+		
+		
 	</Actions>
 
 	<HTTP>
