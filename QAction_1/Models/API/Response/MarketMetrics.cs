@@ -95,7 +95,7 @@ namespace QAction_1.Models.API.Response
 
 
         [JsonProperty("quote")]
-        public Dictionary<string, Quote> Quote { get; set; }
+        public Dictionary<string, ListingQuote> Quote { get; set; }
 
 
         [JsonProperty("last_updated")]

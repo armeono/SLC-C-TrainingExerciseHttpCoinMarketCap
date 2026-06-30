@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace QAction_1.Models.API.Response
 {
-    public class Metadata
+    public class Status
     {
         [JsonProperty("timestamp")]
         public DateTime Timestamp { get; set; }
@@ -22,6 +22,9 @@ namespace QAction_1.Models.API.Response
 
         [JsonProperty("notice")]
         public object Notice { get; set; }
+
+        [JsonProperty("total_count")]
+        public int? TotalCount { get; set; }
     }
 
 }

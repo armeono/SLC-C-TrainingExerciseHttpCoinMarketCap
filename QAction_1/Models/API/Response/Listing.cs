@@ -28,7 +28,7 @@ namespace QAction_1.Models.API.Response
         public List<string> Tags { get; set; }
 
         [JsonProperty("max_supply")]
-        public double MaxSupply { get; set; }
+        public double? MaxSupply { get; set; }
 
         [JsonProperty("circulating_supply")]
         public double CirculatingSupply { get; set; }
@@ -58,6 +58,6 @@ namespace QAction_1.Models.API.Response
         public DateTime LastUpdated { get; set; }
 
         [JsonProperty("quote")]
-        public Dictionary<string, Quote> Quote { get; set; }
+        public Dictionary<string, ListingQuote> Quote { get; set; }
     }
 }

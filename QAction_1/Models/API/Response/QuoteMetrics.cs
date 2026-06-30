@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace QAction_1.Models.API.Response
 {
-    public class Quote
+    public class QuoteMetrics
     {
         [JsonProperty("total_market_cap")]
         public double TotalMarketCap { get; set; }
