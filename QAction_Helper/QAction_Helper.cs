@@ -10,9 +10,9 @@ public static class Parameter
 {
 	/// <summary>PID: 3 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int bearerToken_3 = 3;
+	public const int bearertoken_3 = 3;
 	/// <summary>PID: 3 | Type: read</summary>
-	public const int bearerToken = 3;
+	public const int bearertoken = 3;
 	/// <summary>PID: 4 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int categoryidsholder_4 = 4;
@@ -25,51 +25,51 @@ public static class Parameter
 	public const int currentcategoryid = 5;
 	/// <summary>PID: 100 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int latestListingsStatusCode_100 = 100;
+	public const int latestlistingsstatuscode_100 = 100;
 	/// <summary>PID: 100 | Type: read</summary>
-	public const int latestListingsStatusCode = 100;
+	public const int latestlistingsstatuscode = 100;
 	/// <summary>PID: 101 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int categoriesStatusCode_101 = 101;
+	public const int categoriesstatuscode_101 = 101;
 	/// <summary>PID: 101 | Type: read</summary>
-	public const int categoriesStatusCode = 101;
+	public const int categoriesstatuscode = 101;
 	/// <summary>PID: 102 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int categoryStatusCode_102 = 102;
+	public const int categorystatuscode_102 = 102;
 	/// <summary>PID: 102 | Type: read</summary>
-	public const int categoryStatusCode = 102;
+	public const int categorystatuscode = 102;
 	/// <summary>PID: 103 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int latestQuotesStatusCode_103 = 103;
+	public const int latestquotesstatuscode_103 = 103;
 	/// <summary>PID: 103 | Type: read</summary>
-	public const int latestQuotesStatusCode = 103;
+	public const int latestquotesstatuscode = 103;
 	/// <summary>PID: 1000 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int latestListingsResponse_1000 = 1000;
+	public const int latestlistingsresponse_1000 = 1000;
 	/// <summary>PID: 1000 | Type: read</summary>
-	public const int latestListingsResponse = 1000;
+	public const int latestlistingsresponse = 1000;
 	/// <summary>PID: 1001 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int categoriesResponse_1001 = 1001;
+	public const int categoriesresponse_1001 = 1001;
 	/// <summary>PID: 1001 | Type: read</summary>
-	public const int categoriesResponse = 1001;
+	public const int categoriesresponse = 1001;
 	/// <summary>PID: 1002 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int categoryResponse_1002 = 1002;
+	public const int categoryresponse_1002 = 1002;
 	/// <summary>PID: 1002 | Type: read</summary>
-	public const int categoryResponse = 1002;
+	public const int categoryresponse = 1002;
 	/// <summary>PID: 1003 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public const int latestQuotesResponse_1003 = 1003;
+	public const int latestquotesresponse_1003 = 1003;
 	/// <summary>PID: 1003 | Type: read</summary>
-	public const int latestQuotesResponse = 1003;
+	public const int latestquotesresponse = 1003;
 	public class Write
 	{
 		/// <summary>PID: 53 | Type: write</summary>
 		[EditorBrowsable(EditorBrowsableState.Never)]
-		public const int bearerToken_53 = 53;
+		public const int bearertoken_53 = 53;
 		/// <summary>PID: 53 | Type: write</summary>
-		public const int bearerToken = 53;
+		public const int bearertoken = 53;
 	}
 	public class Latestlistings
 	{
@@ -434,7 +434,7 @@ public static class Parameter
 public class WriteParameters
 {
 	/// <summary>PID: 53  | Type: write</summary>
-	public System.Object BearerToken {get { return Protocol.GetParameter(53); }set { Protocol.SetParameter(53, value); }}
+	public System.Object Bearertoken {get { return Protocol.GetParameter(53); }set { Protocol.SetParameter(53, value); }}
 	/// <summary>PID: 610  | Type: write | DISCREETS: Refresh = 1</summary>
 	public System.Object Categoriesrefreshcategory {get { return Protocol.GetParameter(610); }set { Protocol.SetParameter(610, value); }}
 	public SLProtocolExt Protocol;
@@ -452,22 +452,22 @@ public interface SLProtocolExt : SLProtocol
 	/// <summary>PID: 700</summary>
 	LatestquotesQActionTable latestquotes { get; set; }
 	object Afterstartup_dummy { get; set; }
-	object BearerToken_3 { get; set; }
-	object BearerToken { get; set; }
+	object Bearertoken_3 { get; set; }
+	object Bearertoken { get; set; }
 	object Categoryidsholder_4 { get; set; }
 	object Categoryidsholder { get; set; }
 	object Currentcategoryid_5 { get; set; }
 	object Currentcategoryid { get; set; }
 	object Refreshcategories_dummy { get; set; }
-	object BearerToken_53 { get; set; }
-	object LatestListingsStatusCode_100 { get; set; }
-	object LatestListingsStatusCode { get; set; }
-	object CategoriesStatusCode_101 { get; set; }
-	object CategoriesStatusCode { get; set; }
-	object CategoryStatusCode_102 { get; set; }
-	object CategoryStatusCode { get; set; }
-	object LatestQuotesStatusCode_103 { get; set; }
-	object LatestQuotesStatusCode { get; set; }
+	object Bearertoken_53 { get; set; }
+	object Latestlistingsstatuscode_100 { get; set; }
+	object Latestlistingsstatuscode { get; set; }
+	object Categoriesstatuscode_101 { get; set; }
+	object Categoriesstatuscode { get; set; }
+	object Categorystatuscode_102 { get; set; }
+	object Categorystatuscode { get; set; }
+	object Latestquotesstatuscode_103 { get; set; }
+	object Latestquotesstatuscode { get; set; }
 	object Latestlistingsinstance_501 { get; set; }
 	object Latestlistingsinstance { get; set; }
 	object Latestlistingsrank_502 { get; set; }
@@ -530,14 +530,14 @@ public interface SLProtocolExt : SLProtocol
 	object Latestquotesdefimarketcap { get; set; }
 	object Latestquotesactivestablecoinmarketcap_706 { get; set; }
 	object Latestquotesactivestablecoinmarketcap { get; set; }
-	object LatestListingsResponse_1000 { get; set; }
-	object LatestListingsResponse { get; set; }
-	object CategoriesResponse_1001 { get; set; }
-	object CategoriesResponse { get; set; }
-	object CategoryResponse_1002 { get; set; }
-	object CategoryResponse { get; set; }
-	object LatestQuotesResponse_1003 { get; set; }
-	object LatestQuotesResponse { get; set; }
+	object Latestlistingsresponse_1000 { get; set; }
+	object Latestlistingsresponse { get; set; }
+	object Categoriesresponse_1001 { get; set; }
+	object Categoriesresponse { get; set; }
+	object Categoryresponse_1002 { get; set; }
+	object Categoryresponse { get; set; }
+	object Latestquotesresponse_1003 { get; set; }
+	object Latestquotesresponse { get; set; }
 	WriteParameters Write { get; set; }
 }
 public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
@@ -552,9 +552,9 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Afterstartup_dummy {get { return GetParameter(2); }set { SetParameter(2, value); }}
 	/// <summary>PID: 3  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object BearerToken_3 {get { return GetParameter(3); }set { SetParameter(3, value); }}
+	public System.Object Bearertoken_3 {get { return GetParameter(3); }set { SetParameter(3, value); }}
 	/// <summary>PID: 3  | Type: read</summary>
-	public System.Object BearerToken {get { return GetParameter(3); }set { SetParameter(3, value); }}
+	public System.Object Bearertoken {get { return GetParameter(3); }set { SetParameter(3, value); }}
 	/// <summary>PID: 4  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Categoryidsholder_4 {get { return GetParameter(4); }set { SetParameter(4, value); }}
@@ -569,27 +569,27 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Refreshcategories_dummy {get { return GetParameter(6); }set { SetParameter(6, value); }}
 	/// <summary>PID: 53  | Type: write</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object BearerToken_53 {get { return GetParameter(53); }set { SetParameter(53, value); }}
+	public System.Object Bearertoken_53 {get { return GetParameter(53); }set { SetParameter(53, value); }}
 	/// <summary>PID: 100  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object LatestListingsStatusCode_100 {get { return GetParameter(100); }set { SetParameter(100, value); }}
+	public System.Object Latestlistingsstatuscode_100 {get { return GetParameter(100); }set { SetParameter(100, value); }}
 	/// <summary>PID: 100  | Type: read</summary>
-	public System.Object LatestListingsStatusCode {get { return GetParameter(100); }set { SetParameter(100, value); }}
+	public System.Object Latestlistingsstatuscode {get { return GetParameter(100); }set { SetParameter(100, value); }}
 	/// <summary>PID: 101  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object CategoriesStatusCode_101 {get { return GetParameter(101); }set { SetParameter(101, value); }}
+	public System.Object Categoriesstatuscode_101 {get { return GetParameter(101); }set { SetParameter(101, value); }}
 	/// <summary>PID: 101  | Type: read</summary>
-	public System.Object CategoriesStatusCode {get { return GetParameter(101); }set { SetParameter(101, value); }}
+	public System.Object Categoriesstatuscode {get { return GetParameter(101); }set { SetParameter(101, value); }}
 	/// <summary>PID: 102  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object CategoryStatusCode_102 {get { return GetParameter(102); }set { SetParameter(102, value); }}
+	public System.Object Categorystatuscode_102 {get { return GetParameter(102); }set { SetParameter(102, value); }}
 	/// <summary>PID: 102  | Type: read</summary>
-	public System.Object CategoryStatusCode {get { return GetParameter(102); }set { SetParameter(102, value); }}
+	public System.Object Categorystatuscode {get { return GetParameter(102); }set { SetParameter(102, value); }}
 	/// <summary>PID: 103  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object LatestQuotesStatusCode_103 {get { return GetParameter(103); }set { SetParameter(103, value); }}
+	public System.Object Latestquotesstatuscode_103 {get { return GetParameter(103); }set { SetParameter(103, value); }}
 	/// <summary>PID: 103  | Type: read</summary>
-	public System.Object LatestQuotesStatusCode {get { return GetParameter(103); }set { SetParameter(103, value); }}
+	public System.Object Latestquotesstatuscode {get { return GetParameter(103); }set { SetParameter(103, value); }}
 	/// <summary>PID: 501  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestlistingsinstance_501 {get { return GetParameter(501); }set { SetParameter(501, value); }}
@@ -746,24 +746,24 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Latestquotesactivestablecoinmarketcap {get { return GetParameter(706); }set { SetParameter(706, value); }}
 	/// <summary>PID: 1000  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object LatestListingsResponse_1000 {get { return GetParameter(1000); }set { SetParameter(1000, value); }}
+	public System.Object Latestlistingsresponse_1000 {get { return GetParameter(1000); }set { SetParameter(1000, value); }}
 	/// <summary>PID: 1000  | Type: read</summary>
-	public System.Object LatestListingsResponse {get { return GetParameter(1000); }set { SetParameter(1000, value); }}
+	public System.Object Latestlistingsresponse {get { return GetParameter(1000); }set { SetParameter(1000, value); }}
 	/// <summary>PID: 1001  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object CategoriesResponse_1001 {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
+	public System.Object Categoriesresponse_1001 {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
 	/// <summary>PID: 1001  | Type: read</summary>
-	public System.Object CategoriesResponse {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
+	public System.Object Categoriesresponse {get { return GetParameter(1001); }set { SetParameter(1001, value); }}
 	/// <summary>PID: 1002  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object CategoryResponse_1002 {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
+	public System.Object Categoryresponse_1002 {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
 	/// <summary>PID: 1002  | Type: read</summary>
-	public System.Object CategoryResponse {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
+	public System.Object Categoryresponse {get { return GetParameter(1002); }set { SetParameter(1002, value); }}
 	/// <summary>PID: 1003  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public System.Object LatestQuotesResponse_1003 {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
+	public System.Object Latestquotesresponse_1003 {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
 	/// <summary>PID: 1003  | Type: read</summary>
-	public System.Object LatestQuotesResponse {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
+	public System.Object Latestquotesresponse {get { return GetParameter(1003); }set { SetParameter(1003, value); }}
 	public WriteParameters Write { get; set; }
 	public ConcreteSLProtocolExt()
 	{

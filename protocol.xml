@@ -131,9 +131,6 @@ Any inquiries can be addressed to:
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
 			<Measurement>
 				<Type>string</Type>
 			</Measurement>
@@ -150,9 +147,6 @@ Any inquiries can be addressed to:
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
 			<Measurement>
 				<Type>string</Type>
 			</Measurement>
@@ -178,7 +172,7 @@ Any inquiries can be addressed to:
 				<LengthType>next param</LengthType>
 			</Interprete>
 			<Alarm>
-				<Monitored>true</Monitored>
+				<Monitored>false</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -206,7 +200,7 @@ Any inquiries can be addressed to:
 				<LengthType>next param</LengthType>
 			</Interprete>
 			<Alarm>
-				<Monitored>true</Monitored>
+				<Monitored>false</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -234,7 +228,7 @@ Any inquiries can be addressed to:
 				<LengthType>next param</LengthType>
 			</Interprete>
 			<Alarm>
-				<Monitored>true</Monitored>
+				<Monitored>false</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -260,7 +254,7 @@ Any inquiries can be addressed to:
 				<LengthType>next param</LengthType>
 			</Interprete>
 			<Alarm>
-				<Monitored>true</Monitored>
+				<Monitored>false</Monitored>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -313,7 +307,7 @@ Any inquiries can be addressed to:
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:501|0-502|1-503|2-504|3-505|4-506|5-507|6-508|7-509|8-510|9-511|10-512|11-514|13-513|12-515|14,width:100-100-100-100-100-100-100-124-131-124-122-100-154-100-156,sort:STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:501|0-502|1-503|2-504|3-505|4-506|5-507|6-508|7-509|8-510|9-511|10-512|11-514|13-513|12-515|14,width:100-100-100-100-100-100-100-124-131-124-122-100-154-100-156,sort:STRING-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT-INT|DESC|0,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="501" trending="false">
@@ -340,15 +334,18 @@ Any inquiries can be addressed to:
 			<Description>Rank (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Rank of the latest listing</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
 				<Type>double</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -358,6 +355,7 @@ Any inquiries can be addressed to:
 			<Description>Name (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Name of the latest listing</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -376,6 +374,7 @@ Any inquiries can be addressed to:
 			<Description>Symbol (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Symbol of the latest listing</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -394,6 +393,7 @@ Any inquiries can be addressed to:
 			<Description>Price (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Price of the latest listing</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -402,10 +402,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -415,6 +418,7 @@ Any inquiries can be addressed to:
 			<Description>Market Cap (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Market Cap of the latest listing</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -423,6 +427,7 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
@@ -436,6 +441,7 @@ Any inquiries can be addressed to:
 			<Description>Volume 24h (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Volume of the latest listing in the last 24 hours</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -444,10 +450,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -457,6 +466,7 @@ Any inquiries can be addressed to:
 			<Description>Percent Change 1h (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Percent Change of the latest listing in the last 1 hour</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -465,9 +475,11 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
+				<Units>%</Units>
 			</Display>
 			<Measurement>
 				<Type>number</Type>
@@ -478,6 +490,7 @@ Any inquiries can be addressed to:
 			<Description>Percent Change 24h (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Percent Change of the latest listing in the last 24 hours</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -486,9 +499,11 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
+				<Units>%</Units>
 			</Display>
 			<Measurement>
 				<Type>number</Type>
@@ -499,6 +514,7 @@ Any inquiries can be addressed to:
 			<Description>Percent Change 7d (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Percent Change of the latest listing in the last 7 days</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -507,9 +523,11 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
 			<Display>
 				<RTDisplay>true</RTDisplay>
+				<Units>%</Units>
 			</Display>
 			<Measurement>
 				<Type>number</Type>
@@ -520,6 +538,7 @@ Any inquiries can be addressed to:
 			<Description>Circulating Supply (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Circulating Supply of the latest listing</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -528,10 +547,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -541,6 +563,7 @@ Any inquiries can be addressed to:
 			<Description>Total Supply (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Total Supply of the latest listing</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -549,10 +572,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -562,6 +588,7 @@ Any inquiries can be addressed to:
 			<Description>Max Supply (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Max Supply of the latest listing</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -570,10 +597,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -583,6 +613,7 @@ Any inquiries can be addressed to:
 			<Description>Number of Market Pairs (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Number of Market Pairs of the latest listing</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -591,10 +622,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -604,6 +638,7 @@ Any inquiries can be addressed to:
 			<Description>Last Updated (Latestlistings)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Last Updated timestamp of the latest listing</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -653,7 +688,7 @@ Any inquiries can be addressed to:
 				</Positions>
 			</Display>
 			<Measurement>
-				<Type options="tab=columns:601|0-610|9-602|1-603|2-604|3-605|4-606|5-607|6-608|7-609|8,width:100-175-124-190-152-195-133-176-207-162,sort:STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT,lines:25,filter:true">table</Type>
+				<Type options="tab=columns:601|0-610|9-602|1-603|2-604|3-605|4-606|5-607|6-608|7-609|8,width:100-175-124-190-152-195-133-176-207-162,sort:STRING-STRING-STRING-INT-INT-INT-INT-INT-INT-INT|DESC|0,lines:25,filter:true">table</Type>
 			</Measurement>
 		</Param>
 		<Param id="601" trending="false">
@@ -680,6 +715,7 @@ Any inquiries can be addressed to:
 			<Description>Name (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Name of the category</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>other</RawType>
@@ -695,9 +731,10 @@ Any inquiries can be addressed to:
 		</Param>
 		<Param id="603" trending="true">
 			<Name>CategoriesNumberOfTokens</Name>
-			<Description>NumberOfTokens (Categories)</Description>
+			<Description>Numberoftokens (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Number of tokens in the category</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -706,19 +743,23 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
 		<Param id="604" trending="true">
 			<Name>CategoriesMarketCap</Name>
-			<Description>MarketCap (Categories)</Description>
+			<Description>Marketcap (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Market Cap of the latest listing in the category</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -727,19 +768,23 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
 		<Param id="605" trending="true">
 			<Name>CategoriesMarketCapChange</Name>
-			<Description>MarketCapChange (Categories)</Description>
+			<Description>Marketcapchange (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Percent Change of the latest listing in the last 24 hours</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -748,10 +793,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -761,6 +809,7 @@ Any inquiries can be addressed to:
 			<Description>Volume (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Volume of the latest listing in the category</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -769,19 +818,23 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
 		<Param id="607" trending="true">
 			<Name>CategoriesVolumeChange</Name>
-			<Description>VolumeChange (Categories)</Description>
+			<Description>Volumechange (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Volume Change of the latest listing in the last 24 hours</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -790,19 +843,23 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
 		<Param id="608" trending="true">
 			<Name>CategoriesAveragePriceChange</Name>
-			<Description>AveragePriceChange (Categories)</Description>
+			<Description>Averagepricechange (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Average Price Change of the latest listing in the last 24 hours</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -811,19 +868,23 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
 		<Param id="609" trending="false">
 			<Name>CategoriesLastUpdated</Name>
-			<Description>LastUpdated (Categories)</Description>
+			<Description>Lastupdated (Categories)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Last Updated timestamp of the latest listing in the category</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -866,7 +927,7 @@ Any inquiries can be addressed to:
 		<!--Quote table-->
 		<Param id="700">
 			<Name>LatestQuotes</Name>
-			<Description>LatestQuotes</Description>
+			<Description>Latestquotes</Description>
 			<Type>array</Type>
 			<ArrayOptions index="0">
 				<ColumnOption idx="0" pid="701" type="retrieved" options="" />
@@ -895,7 +956,7 @@ Any inquiries can be addressed to:
 		</Param>
 		<Param id="701" trending="false">
 			<Name>LatestQuotesInstance</Name>
-			<Description>Instance (LatestQuotes)</Description>
+			<Description>Instance (Latestquotes)</Description>
 			<Type>read</Type>
 			<Information>
 				<Subtext>This is the key used internally by DataMiner to identify the table entries.</Subtext>
@@ -914,9 +975,10 @@ Any inquiries can be addressed to:
 		</Param>
 		<Param id="702" trending="true">
 			<Name>LatestQuotesBTCDominance</Name>
-			<Description>BTCDominance (LatestQuotes)</Description>
+			<Description>Btcdominance (Latestquotes)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Bitcoin Dominance percentage</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -925,19 +987,23 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
 		<Param id="703" trending="true">
 			<Name>LatestQuotesETHDominance</Name>
-			<Description>ETHDominance (LatestQuotes)</Description>
+			<Description>Ethdominance (Latestquotes)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Ethereum Dominance percentage</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -946,19 +1012,23 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
 		<Param id="704" trending="true">
 			<Name>LatestQuotesActiveCryptocurrencies</Name>
-			<Description>ActiveCryptocurrencies (LatestQuotes)</Description>
+			<Description>Activecryptocurrencies (Latestquotes)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Number of active cryptocurrencies</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -967,19 +1037,23 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
 		<Param id="705" trending="true">
 			<Name>LatestQuotesDefiMarketCap</Name>
-			<Description>DefiMarketCap (LatestQuotes)</Description>
+			<Description>Defimarketcap (Latestquotes)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>DeFi Market Cap of the latest listing</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -988,19 +1062,23 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
 		</Param>
 		<Param id="706" trending="true">
 			<Name>LatestQuotesActiveStableCoinMarketCap</Name>
-			<Description>ActiveStableCoinMarketCap (LatestQuotes)</Description>
+			<Description>Activestablecoinmarketcap (Latestquotes)</Description>
 			<Type>read</Type>
 			<Information>
+				<Subtext>Market Cap of active stablecoins</Subtext>
 			</Information>
 			<Interprete>
 				<RawType>numeric text</RawType>
@@ -1009,10 +1087,13 @@ Any inquiries can be addressed to:
 			</Interprete>
 			<Alarm>
 				<Monitored>true</Monitored>
+				<Normal>100</Normal>
 			</Alarm>
+			<!-- SuppressValidator 2.9.7 no need for unit -->
 			<Display>
 				<RTDisplay>true</RTDisplay>
 			</Display>
+			<!-- /SuppressValidator 2.9.7 -->
 			<Measurement>
 				<Type>number</Type>
 			</Measurement>
@@ -1031,9 +1112,6 @@ Any inquiries can be addressed to:
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
 			<Measurement>
 				<Type>string</Type>
 			</Measurement>
@@ -1050,9 +1128,6 @@ Any inquiries can be addressed to:
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
 			<Measurement>
 				<Type>string</Type>
 			</Measurement>
@@ -1069,9 +1144,6 @@ Any inquiries can be addressed to:
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
 			<Measurement>
 				<Type>string</Type>
 			</Measurement>
@@ -1088,9 +1160,6 @@ Any inquiries can be addressed to:
 				<Type>string</Type>
 				<LengthType>next param</LengthType>
 			</Interprete>
-			<Display>
-				<RTDisplay>true</RTDisplay>
-			</Display>
 			<Measurement>
 				<Type>string</Type>
 			</Measurement>
