@@ -1,6 +1,7 @@
 using System;
-
+using QAction_1.Models.API.Response;
 using Skyline.DataMiner.Scripting;
+using Skyline.DataMiner.Utils.SecureCoding.SecureSerialization.Json.Newtonsoft;
 
 /// <summary>
 /// DataMiner QAction Class.
@@ -15,8 +16,38 @@ public static class QAction
     {
         try
         {
+            var parameterId = protocol.GetTriggerParameter();
 
-            // Category QA
+            var parameterData = protocol.GetParameter(parameterId);
+
+            CategoryAPIResponse response = SecureNewtonsoftDeserialization.DeserializeObject<CategoryAPIResponse>(Convert.ToString(parameterData));
+
+            protocol.Log($"QA{protocol.QActionID}|Response received for ID| {response.Data.Id}", LogType.Information, LogLevel.NoLogging);
+
+            //if (response.Data.Count == 0)
+            //{
+            //    return;
+            //}
+
+            //var categories = response.Data.Select((category) =>
+            //{
+
+            //    return new CategoriesQActionRow
+            //    {
+            //        Categoriesinstance_601 = category.Id,
+            //        Categoriesname_602 = category.Name,
+            //        Categoriesnumberoftokens_603 = category.NumTokens,
+            //        Categoriesmarketcap_604 = category.MarketCap,
+            //        Categoriesmarketcapchange_605 = category.MarketCapChange,
+            //        Categoriesvolume_606 = category.Volume,
+            //        Categoriesvolumechange_607 = category.VolumeChange,
+            //        Categoriesaveragepricechange_608 = category.AvgPriceChange,
+            //        Categorieslastupdated_609 = category.LastUpdated,
+            //    }.ToObjectArray();
+
+            //}).ToList();
+
+            //protocol.FillArray(Parameter.Categories.tablePid, categories, NotifyProtocol.SaveOption.Full);
 
         }
         catch (Exception ex)

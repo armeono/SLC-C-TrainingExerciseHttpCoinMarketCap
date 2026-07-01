@@ -13,6 +13,16 @@ public static class Parameter
 	public const int bearerToken_3 = 3;
 	/// <summary>PID: 3 | Type: read</summary>
 	public const int bearerToken = 3;
+	/// <summary>PID: 4 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int categoryidsholder_4 = 4;
+	/// <summary>PID: 4 | Type: read</summary>
+	public const int categoryidsholder = 4;
+	/// <summary>PID: 5 | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public const int currentcategoryid_5 = 5;
+	/// <summary>PID: 5 | Type: read</summary>
+	public const int currentcategoryid = 5;
 	/// <summary>PID: 100 | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public const int latestListingsStatusCode_100 = 100;
@@ -286,6 +296,11 @@ public static class Parameter
 			public const int categorieslastupdated = 609;
 			public class Write
 			{
+				/// <summary>PID: 610 | Type: write</summary>
+				[EditorBrowsable(EditorBrowsableState.Never)]
+				public const int categoriesrefreshcategory_610 = 610;
+				/// <summary>PID: 610 | Type: write</summary>
+				public const int categoriesrefreshcategory = 610;
 			}
 		}
 		public class Idx
@@ -420,6 +435,8 @@ public class WriteParameters
 {
 	/// <summary>PID: 53  | Type: write</summary>
 	public System.Object BearerToken {get { return Protocol.GetParameter(53); }set { Protocol.SetParameter(53, value); }}
+	/// <summary>PID: 610  | Type: write | DISCREETS: Refresh = 1</summary>
+	public System.Object Categoriesrefreshcategory {get { return Protocol.GetParameter(610); }set { Protocol.SetParameter(610, value); }}
 	public SLProtocolExt Protocol;
 	public WriteParameters(SLProtocolExt protocol)
 	{
@@ -437,6 +454,11 @@ public interface SLProtocolExt : SLProtocol
 	object Afterstartup_dummy { get; set; }
 	object BearerToken_3 { get; set; }
 	object BearerToken { get; set; }
+	object Categoryidsholder_4 { get; set; }
+	object Categoryidsholder { get; set; }
+	object Currentcategoryid_5 { get; set; }
+	object Currentcategoryid { get; set; }
+	object Refreshcategories_dummy { get; set; }
 	object BearerToken_53 { get; set; }
 	object LatestListingsStatusCode_100 { get; set; }
 	object LatestListingsStatusCode { get; set; }
@@ -494,6 +516,8 @@ public interface SLProtocolExt : SLProtocol
 	object Categoriesaveragepricechange { get; set; }
 	object Categorieslastupdated_609 { get; set; }
 	object Categorieslastupdated { get; set; }
+	object Categoriesrefreshcategory_610 { get; set; }
+	object Categoriesrefreshcategory { get; set; }
 	object Latestquotesinstance_701 { get; set; }
 	object Latestquotesinstance { get; set; }
 	object Latestquotesbtcdominance_702 { get; set; }
@@ -531,6 +555,18 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object BearerToken_3 {get { return GetParameter(3); }set { SetParameter(3, value); }}
 	/// <summary>PID: 3  | Type: read</summary>
 	public System.Object BearerToken {get { return GetParameter(3); }set { SetParameter(3, value); }}
+	/// <summary>PID: 4  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Categoryidsholder_4 {get { return GetParameter(4); }set { SetParameter(4, value); }}
+	/// <summary>PID: 4  | Type: read</summary>
+	public System.Object Categoryidsholder {get { return GetParameter(4); }set { SetParameter(4, value); }}
+	/// <summary>PID: 5  | Type: read</summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	public System.Object Currentcategoryid_5 {get { return GetParameter(5); }set { SetParameter(5, value); }}
+	/// <summary>PID: 5  | Type: read</summary>
+	public System.Object Currentcategoryid {get { return GetParameter(5); }set { SetParameter(5, value); }}
+	/// <summary>PID: 6  | Type: dummy</summary>
+	public System.Object Refreshcategories_dummy {get { return GetParameter(6); }set { SetParameter(6, value); }}
 	/// <summary>PID: 53  | Type: write</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object BearerToken_53 {get { return GetParameter(53); }set { SetParameter(53, value); }}
@@ -674,6 +710,10 @@ public class ConcreteSLProtocolExt : ConcreteSLProtocol, SLProtocolExt
 	public System.Object Categorieslastupdated_609 {get { return GetParameter(609); }set { SetParameter(609, value); }}
 	/// <summary>PID: 609  | Type: read</summary>
 	public System.Object Categorieslastupdated {get { return GetParameter(609); }set { SetParameter(609, value); }}
+	/// <summary>PID: 610  | Type: write | DISCREETS: Refresh = 1</summary>
+	public System.Object Categoriesrefreshcategory_610 {get { return GetParameter(610); }set { SetParameter(610, value); }}
+	/// <summary>PID: 610  | Type: write | DISCREETS: Refresh = 1</summary>
+	public System.Object Categoriesrefreshcategory {get { return Write.Categoriesrefreshcategory; }set { Write.Categoriesrefreshcategory = value; }}
 	/// <summary>PID: 701  | Type: read</summary>
 	[EditorBrowsable(EditorBrowsableState.Never)]
 	public System.Object Latestquotesinstance_701 {get { return GetParameter(701); }set { SetParameter(701, value); }}
@@ -885,8 +925,12 @@ public class CategoriesQActionRow : QActionTableRow
 	public System.Object Categorieslastupdated_609 { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
 	/// <summary>PID: 609 | Type: read</summary>
 	public System.Object Categorieslastupdated { get { if (base.Columns.ContainsKey(8)) { return base.Columns[8]; } else { return null; } } set { if (base.Columns.ContainsKey(8)) { base.Columns[8] = value; } else { base.Columns.Add(8, value); } } }
-	public CategoriesQActionRow() : base(0, 9) { }
-	public CategoriesQActionRow(System.Object[] oRow) : base(0, 9, oRow) { }
+	/// <summary>PID: 610 | Type: write</summary>
+	public System.Object Categoriesrefreshcategory_610 { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	/// <summary>PID: 610 | Type: write</summary>
+	public System.Object Categoriesrefreshcategory { get { if (base.Columns.ContainsKey(9)) { return base.Columns[9]; } else { return null; } } set { if (base.Columns.ContainsKey(9)) { base.Columns[9] = value; } else { base.Columns.Add(9, value); } } }
+	public CategoriesQActionRow() : base(0, 10) { }
+	public CategoriesQActionRow(System.Object[] oRow) : base(0, 10, oRow) { }
 	public static implicit operator CategoriesQActionRow(System.Object[] source) { return new CategoriesQActionRow(source); }
 	public static implicit operator System.Object[](CategoriesQActionRow source) { return source.ToObjectArray(); }
 }

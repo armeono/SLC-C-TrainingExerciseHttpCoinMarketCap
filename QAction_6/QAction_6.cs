@@ -21,8 +21,6 @@ public static class QAction
 
             var parameterData = protocol.GetParameter(parameterId);
 
-            protocol.Log($"QA{protocol.QActionID}|{parameterData}|Message", LogType.Error, LogLevel.NoLogging);
-
             LatestQuotesAPIResponse response = SecureNewtonsoftDeserialization.DeserializeObject<LatestQuotesAPIResponse>(Convert.ToString(parameterData));
 
             if (response.Data == null)
